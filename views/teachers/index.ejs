@@ -1,0 +1,30 @@
+<%- include ("../partials/header") %>
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Welcome to Tutor-Delhi </h1>
+                <a class="btn btn-primary btn-large" href="/teachers/new">Register Yourself</a>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% teachers.forEach(function(teacher){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                     <div class="caption">
+                       <h4><%= teacher.name %></h4>
+                   </div>
+                   <div class="caption">
+                       <h4><%= teacher.subject %></h4>
+                   </div>
+                   <p>
+                       <a href="/teachers/<%= teacher._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include ("../partials/footer") %>
